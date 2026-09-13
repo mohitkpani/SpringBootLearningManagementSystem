@@ -47,7 +47,8 @@ public class CourseService {
 	public CourseResponseDTO getCourseById(Long id) {
 		Course course = courseRepository.findById(id)
 				.orElseThrow(() -> new CourseNotFoundException(
-				"Course not found with the id: " + id));
+						"No Course found with the id " + id
+						));
 		return mapToResponseDTO(course);
 	}
 	
