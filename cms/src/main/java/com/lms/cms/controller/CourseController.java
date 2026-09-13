@@ -2,6 +2,9 @@ package com.lms.cms.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -36,14 +39,17 @@ public class CourseController {
 	
 	//ADD COURSE
 	@PostMapping
-	public CourseResponseDTO createCourse(@Valid @RequestBody CourseRequestDTO course) {
-		return courseService.createCourse(course);
+	public ResponseEntity <CourseResponseDTO> createCourse(@Valid @RequestBody CourseRequestDTO course) {
+		 CourseResponseDTO courseCreated = courseService.createCourse(course);
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(courseCreated);
+		
 	}
 	
 	//GET COURSE BY ID
 	@GetMapping("/{id}")
-	public CourseResponseDTO getCourseById(@PathVariable Long id) {
-		return courseService.getCourseById(id);
+	public ResponseEntity <CourseResponseDTO> getCourseById(@PathVariable Long id) {
+		return ResponseEntity.ok(courseService.getCourseById(id));
 	}
 	
 	//GET ALL COURSES
@@ -54,20 +60,21 @@ public class CourseController {
 	
 	//PARTIAL UPDATE
 	@PatchMapping("/{id}")
-	public CourseResponseDTO updateCoursePartially(@PathVariable Long id, @RequestBody CourseRequestDTO updatedCourse) {
-		return courseService.updateCoursePartially(id, updatedCourse);
+	public ResponseEntity <CourseResponseDTO> updateCoursePartially(@PathVariable Long id, @RequestBody CourseRequestDTO updatedCourse) {
+		return ResponseEntity.ok (courseService.updateCoursePartially(id, updatedCourse));
 	}
 	
 	//FULL UPDATE
 	@PutMapping("/{id}")
-	public CourseResponseDTO updateCourseFully(@PathVariable Long id,@RequestBody CourseRequestDTO updatedCourse) {
-		return courseService.updateCourseFully(id, updatedCourse);
+	public ResponseEntity <CourseResponseDTO> updateCourseFully(@PathVariable Long id,@RequestBody CourseRequestDTO updatedCourse) {
+		return ResponseEntity.ok(courseService.updateCourseFully(id, updatedCourse));
 	}
 	
 	//DELETE COURSE
 	@DeleteMapping("/{id}")
-	public String deleteCourse(@PathVariable Long id) {
-		 return courseService.deleteCourse(id);
+	public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
+		 courseService.deleteCourse(id);
+		 return ResponseEntity.noContent().build();
 		 
 		
 	}
