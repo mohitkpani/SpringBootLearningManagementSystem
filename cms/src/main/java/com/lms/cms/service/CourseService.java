@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.lms.cms.dto.CourseRequestDTO;
 import com.lms.cms.dto.CourseResponseDTO;
 import com.lms.cms.entity.Course;
+import com.lms.cms.exception.CourseNotFoundException;
 import com.lms.cms.repository.CourseRepository;
 
 @Service
@@ -27,7 +28,7 @@ public class CourseService {
 		return course;
 	}
 	
-	private CourseResponseDTO mapToResposeDTTO(Course course) {
+	private CourseResponseDTO mapToResponseDTO(Course course) {
 		return new CourseResponseDTO(
 				course.getId(),
 				course.getName(),
@@ -39,19 +40,21 @@ public class CourseService {
 	//ADD COURSE
 	public CourseResponseDTO createCourse(CourseRequestDTO course) {
 		Course createdCourse = courseRepository.save(mapToEntity(course));
-		return mapToResposeDTTO(createdCourse);
+		return mapToResponseDTO(createdCourse);
 	}
 	
 	//GET COURSE BY ID
 	public CourseResponseDTO getCourseById(Long id) {
-		Course course = courseRepository.findById(id).get();
-		return mapToResposeDTTO(course);
+		Course course = courseRepository.findById(id)
+				.orElseThrow(() -> new CourseNotFoundException(
+				"Course not found with the id: " + id));
+		return mapToResponseDTO(course);
 	}
 	
 	//GET ALL COURSES
 	public List<CourseResponseDTO> getAllCourses(){
 		List<Course> CourseList = courseRepository.findAll();
-		return CourseList.stream().map(this::mapToResposeDTTO).toList();
+		return CourseList.stream().map(this::mapToResponseDTO).toList();
 	}
 	
 	//PARTIAL UPDATE
@@ -69,7 +72,7 @@ public class CourseService {
 			existingCourse.setPrice(updatedCourse.price());
 		
 		 Course savedCourse = courseRepository.save(existingCourse);
-		 return mapToResposeDTTO(savedCourse);
+		 return mapToResponseDTO(savedCourse);
 		
 	}
 	
@@ -82,7 +85,7 @@ public class CourseService {
 		existingCourse.setPrice(updatedCourse.price());
 		
 		Course updatedCourses = courseRepository.save(existingCourse);
-		return mapToResposeDTTO(updatedCourses);
+		return mapToResponseDTO(updatedCourses);
 	}
 
 	//DELETE COURSE
