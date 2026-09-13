@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="heading">
+            <h1>COURSE MANAGEMENT SYSTEM</h1>
+            <p>Full Stack Java Developer</p>
+        </div>
+
+        <!-- YOUR PROFILE -->
+        <div class="profile">
+
+            <img src="images/profile.jpg" alt="Mohit Kumar Pani">
+
+            <div>
+                <h3>MOHIT KUMAR PANI</h3>
+                <p>FULLSTACK JAVA DEVELOPER</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ADD COURSE -->
+        <section class="box">
+
+            <h2>Add Course</h2>
+
+            <form id="addCourseForm">
+
+                <input
+                    type="text"
+                    id="courseName"
+                    placeholder="Course Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="courseDescription"
+                    placeholder="Course Description"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="coursePrice"
+                    placeholder="Course Price"
+                    min="0"
+                    required
+                >
+
+                <button type="submit">
+                    Add Course
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- FIND COURSE -->
+        <section class="box">
+
+            <h2>Find Course By ID</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="number"
+                    id="findId"
+                    placeholder="Enter Course ID"
+                >
+
+                <button onclick="findCourse()">
+                    Find Course
+                </button>
+
+            </div>
+
+            <div id="findResult"></div>
+
+        </section>
+
+
+        <!-- ALL COURSES -->
+        <section class="box">
+
+            <div class="section-title">
+
+                <h2>All Courses</h2>
+
+                <button onclick="getAllCourses()">
+                    Refresh
+                </button>
+
+            </div>
+
+            <div id="courseList"></div>
+
+        </section>
+
+
+        <!-- UPDATE COURSE -->
+        <section class="box">
+
+            <h2>Update Course</h2>
+
+            <input
+                type="number"
+                id="updateId"
+                placeholder="Enter Course ID"
+            >
+
+            <button onclick="loadCourse()">
+                Load Course
+            </button>
+
+
+            <div id="updateForm" class="hidden">
+
+                <input
+                    type="text"
+                    id="updateName"
+                    placeholder="Course Name"
+                >
+
+                <input
+                    type="text"
+                    id="updateDescription"
+                    placeholder="Course Description"
+                >
+
+                <input
+                    type="number"
+                    id="updatePrice"
+                    placeholder="Course Price"
+                >
+
+                <div class="update-buttons">
+
+                    <button onclick="fullUpdate()">
+                        Full Update
+                    </button>
+
+                    <button onclick="partialUpdate()">
+                        Partial Update
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DELETE COURSE -->
+        <section class="box">
+
+            <h2>Delete Course</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="number"
+                    id="deleteId"
+                    placeholder="Enter Course ID"
+                >
+
+                <button
+                    class="delete"
+                    onclick="deleteCourse()"
+                >
+                    Delete Course
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>COURSE MANAGEMENT SYSTEM</p>
+
+        <p>Developed by Mohit Kumar Pani</p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

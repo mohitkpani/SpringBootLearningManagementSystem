@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(10, 55, 35, 0.75),
+            rgba(5, 35, 25, 0.85)
+        ),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e")
+        center / cover fixed no-repeat;
+
+    color: #222;
+
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: 30px auto;
+
+    padding: 20px 30px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+}
+
+
+.heading h1 {
+
+    color: #14532d;
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.heading p {
+
+    color: #4b7c59;
+
+    margin-top: 5px;
+
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px 15px;
+
+    border: 2px solid #22c55e;
+
+    border-radius: 12px;
+
+    background: #f0fdf4;
+
+}
+
+
+.profile img {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid #16a34a;
+
+}
+
+
+.profile h3 {
+
+    color: #14532d;
+
+    font-size: 15px;
+
+}
+
+
+.profile p {
+
+    color: #4b7c59;
+
+    font-size: 11px;
+
+    margin-top: 4px;
+
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+
+/* ================= BOX ================= */
+
+.box {
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+}
+
+
+.box h2 {
+
+    color: #166534;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ================= INPUT ================= */
+
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #b7c9bd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+input:focus {
+
+    border-color: #16a34a;
+
+    box-shadow: 0 0 5px rgba(22,163,74,0.3);
+
+}
+
+
+/* ================= BUTTON ================= */
+
+button {
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+button:hover {
+
+    background: #15803d;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-box {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.search-box input {
+
+    margin: 0;
+
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+/* ================= COURSE ================= */
+
+.course {
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: #f0fdf4;
+
+    border-left: 5px solid #22c55e;
+
+    border-radius: 8px;
+
+}
+
+
+.course h3 {
+
+    color: #166534;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.course p {
+
+    color: #4b5563;
+
+    margin: 7px 0;
+
+}
+
+
+.course .price {
+
+    color: #15803d;
+
+    font-weight: bold;
+
+}
+
+
+/* ================= COURSE BUTTONS ================= */
+
+.course-buttons {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+/* ================= DELETE ================= */
+
+.delete {
+
+    background: #dc2626;
+
+}
+
+
+.delete:hover {
+
+    background: #b91c1c;
+
+}
+
+
+/* ================= UPDATE ================= */
+
+.update-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 5px;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(0,0,0,0.3);
+
+}
+
+
+footer p:first-child {
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+
+    .update-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .course-buttons {
+
+        flex-direction: column;
+
+    }
+
+}
