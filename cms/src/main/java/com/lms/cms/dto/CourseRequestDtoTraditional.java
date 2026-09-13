@@ -1,0 +1,51 @@
+package com.lms.cms.dto;
+
+public class CourseRequestDtoTraditional {
+	
+	private String name;
+	private String description;
+	private Integer price;
+	
+	public CourseRequestDtoTraditional() {
+		super();
+	}
+
+	public CourseRequestDtoTraditional(String name, String description, Integer price) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "CourseRequestDto [name=" + name + ", description=" + description + ", price=" + price + "]";
+	}
+	
+	
+
+}
